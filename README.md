@@ -223,4 +223,91 @@ ON DUPLICATE KEY UPDATE name='Alice', mobilenumber='876876876';
 
     A trigger in MySQL can be associated to a permanent table. It can not be associated to more than one table. Also a trigger cannot be associated to temporary table or view.
 
+24. ### what do ddl dml and dcl stand
+    
+    **DDL**
 
+    **DDL** is short name of Data Definition Language, which deals with database schemas and descriptions, of how the data should reside in the database.
+
+    * **CREATE** - to create a database and its objects like (table, index, views, store procedure, function, and triggers)
+    * **ALTER** - alters the structure of the existing database
+    **DROP** - delete objects from the database
+    * **TRUNCATE** - remove all records from a table, including all spaces allocated for the records are removed
+    * **COMMENT** - add comments to the data dictionary
+    * **RENAME** - rename an object
+
+    **DML**
+
+    DML is short name of Data Manipulation Language which deals with data manipulation and includes most common SQL statements such SELECT, INSERT, UPDATE, DELETE, etc., and it is used to store, modify, retrieve, delete and update data in a database.
+
+    * **SELECT** - retrieve data from a database
+    * **INSERT** - insert data into a table
+    * **UPDATE** - updates existing data within a table
+    * **DELETE** - Delete all records from a database table
+    * **MERGE** - UPSERT operation (insert or update)
+    * **CALL** - call a PL/SQL or Java subprogram
+    * **EXPLAIN PLAN** - interpretation of the data access path
+    * **LOCK TABLE** - concurrency Control
+
+    **DCL**
+    
+    **DCL** is short name of Data Control Language which includes commands such as GRANT and mostly concerned with rights, permissions and other controls of the database system.
+
+    * **GRANT** - allow users access privileges to the database
+    * **REVOKE** - withdraw users access privileges given by using the GRANT command
+
+    **TCL**
+
+    **TCL** is short name of Transaction Control Language which deals with a transaction within a database.
+
+    * **COMMIT** - commits a Transaction
+    * **ROLLBACK** - rollback a transaction in case of any error occurs
+    * **SAVEPOINT** - to rollback the transaction making points within groups
+    * **SET TRANSACTION** - specify characteristics of the transaction
+
+25. ### Explain MySql joins
+
+    A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+    Supported Types of Joins in MySQL
+
+    * **INNER JOIN** - Returns records that have matching values in both tables    
+    * **LEFT JOIN** -   Returns all records from the left table, and the matched records from the right table    
+    * **RIGHT JOIN**- Returns all records from the right table, and the matched records from the left table    
+    * **CROSS JOIN**- Returns all records from both tables
+    ![mysql-JOins](./images/Mysql-JOins.png)
+
+26. ### What is Primary Key?
+
+    The primary key is a unique or non-null key that uniquely identifies every record in that table or relation. The primary key column cannot store duplicate values that mean primary key column values are always unique. It is also called a minimal super key; therefore, we cannot specify more than one primary key in any relationship. A primary key column of one table can be referenced by a foreign key column of another table.
+
+    The following are the essential primary key features:
+
+    * The primary key column cannot contain duplicate values.
+    * The primary key implements the entity integrity of the table.
+    * A table cannot have more than one primary key column.
+    * We can make the primary key from one or more table fields.
+    * The primary key column should have NOT NULL constraints.
+
+27. ### What is a Unique Key?
+
+    The unique key is a single column or combination of columns in a table to uniquely identify database records. A unique key prevents from storing duplicate values in the column. A table can contain multiple unique key columns, unlike a primary key column. This key is similar to the primary key, except that one NULL value can be stored in the unique key column. The unique key is also called unique constraints and can be referenced by another table's foreign key.
+
+    The following are the essential unique key features:
+
+    * We can construct the unique key from one or more table fields.
+    * A table can define multiple unique key columns.
+    * By default, a unique key is in non-clustered unique indexes.
+    * The unique constraint column can store NULL value, but only one NULL is allowed null per column.
+    * The foreign key can reference the unique constraint in preserving the uniqueness of a table.
+
+28. ### differences between Primary and Unique Key
+
+    The following points explain the key differences between primary and candidate keys:
+
+    * A primary key can constitute one or more fields of a table to identify records in a table uniquely. On the other hand, a unique key prevents two rows from having duplicate entries in a column.
+    * A table cannot have more than one primary key in a relational database, while there can be multiple unique keys per table.
+    * A primary key column cannot contain NULL values, whereas a unique key can have NULL values, but only one NULL is allowed in a table.
+    * A primary key should be unique, but a unique key cannot necessarily be the primary key.
+    * The primary key by default is a clustered index where data is physically organized in the sequential index. In contrast, the unique key is a unique non-clustered index.
+    * The primary key implements entity integrity, whereas the unique key enforces unique data.
