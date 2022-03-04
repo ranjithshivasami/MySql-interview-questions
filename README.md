@@ -406,3 +406,14 @@ ON DUPLICATE KEY UPDATE name='Alice', mobilenumber='876876876';
     6. ***MySQL Query Caching***
 
         As we know, caching is used to improve performance. It will faster the site or application. The MySQL query cache is a global one shared among the sessions. The query cache stores results of SELECT queries enabling the quick return of the query if an identical query is received in the future. When the server for the same query, MySQL ask will retrieve the results from the cache instead of running the query again. This will indeed fasten the process significantly. The results will be set in a memory cache like Memcached or Cassandra.
+
+31. ### How many TRIGGERS are allowed in MySQL table?
+
+    SIX triggers are allowed in MySQL table. They are as follows:
+
+    1. BEFORE INSERT
+    1. AFTER INSERT
+    1. BEFORE UPDATE
+    1. AFTER UPDATE
+    1. BEFORE DELETE and
+    1. AFTER DELETE
